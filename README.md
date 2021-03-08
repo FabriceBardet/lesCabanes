@@ -1,4 +1,4 @@
-# lesCabanes
+# les Cabanes
 
 ## Borne des cabanes urbaines
 
