@@ -42,3 +42,15 @@ Voic la ligne de commande pour lancer l'application
 
 ```ionic serve```
 
+### Mettre en place l'application sur tablette
+
+Suivant le système d'exploitation voici les commandes
+
+Pour Android:
+
+```ionic cordova run android```
+
+Pour IOS:
+
+```ionic cordova run ios```
+
