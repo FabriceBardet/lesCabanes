@@ -1,0 +1,31 @@
+<ion-grid>
+    <ion-row>
+        <ion-col size="3">
+            <div id="zoneRetour" (click)="dismiss()">
+                <ion-img id="iconeRetour" src="../../assets/icones/picto-back.png"></ion-img>
+                <ion-text id="texteRetour" color="primary">Camp 4</ion-text>
+            </div>
+        </ion-col>
+        <ion-col size="9">
+            <ion-text id="titre" color="primary">Planning des cours d'Escalade</ion-text>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<div id="semaine">
+    <ion-item lines="none" *ngFor="let jour of semaine">
+        <ion-label>{{ jour | uppercase }}</ion-label>
+        <ion-list id="jour" *ngFor="let cours of coursEscalade.get(jour) | async">
+            <ion-card class="coursPlanning">
+                <ion-card-subtitle style="color: #F15175" *ngIf="cours.age == '4 à 6 ans'">{{ cours.creneau }}</ion-card-subtitle>
+                <ion-card-subtitle style="color: #4CBBB5" *ngIf="cours.age == '7 à 10 ans'"> {{ cours.creneau }}</ion-card-subtitle>
+                <ion-card-subtitle style="color: #FFA422" *ngIf="cours.age == '11 à 15 ans'"> {{ cours.creneau }}</ion-card-subtitle>
+                <ion-card-subtitle style="color: #C1CA53" *ngIf="cours.age == 'adultes'"> {{ cours.creneau }}</ion-card-subtitle>
+                <ion-card-title style="color: #F15175" *ngIf="cours.age == '4 à 6 ans'">{{ cours.age }}</ion-card-title>
+                <ion-card-title style="color: #4CBBB5" *ngIf="cours.age == '7 à 10 ans'">{{ cours.age }}</ion-card-title>
+                <ion-card-title style="color: #FFA422" *ngIf="cours.age == '11 à 15 ans'">{{ cours.age }}</ion-card-title>
+                <ion-card-title style="color: #C1CA53" *ngIf="cours.age == 'adultes'">{{ cours.age }}</ion-card-title>
+            </ion-card>
+        </ion-list>
+    </ion-item>
+</div>

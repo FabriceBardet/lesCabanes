@@ -1,0 +1,44 @@
+#zoneRetour{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#iconeRetour{
+  width:15%;
+  margin: 10px;
+}
+
+#texteRetour{
+  font-size: 1.5em;
+}
+
+#titre{
+  font-size: 1.8vmax;
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+}
+
+ion-label{
+  --ion-font-family: Neilvard-One;
+}
+
+ion-item {
+  --ion-item-background: none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+ion-list{
+  padding: 0;
+  margin: 0;
+}
+
+.coursPlanning{
+  width: 150px;
+  height: 75px;
+}
+
+#semaine{
+  margin-bottom: 10%;
+}

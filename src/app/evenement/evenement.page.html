@@ -1,0 +1,17 @@
+<ion-content>
+  <app-component-header-evenement [nomPage]="titre"></app-component-header-evenement>
+  <ion-img class="imgFondHeader" src="../../assets/elements-graphiques/shape-line-14.svg"></ion-img>
+  <ion-img class="imgFondEvent" src="../../assets/elements-graphiques/shape-line-6.svg"></ion-img>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-img src="{{ img }}"></ion-img>
+      </ion-col>
+      <ion-col size="6">
+        <app-detail-evenement [id]="id"></app-detail-evenement>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <qrcode [qrdata]="qrCodeTexte" class="imgFondQrCode" [size]="256" [level]="'M'"></qrcode>
+</ion-content>

@@ -1,0 +1,26 @@
+<div id="programme">
+  <ion-item lines="none">
+    <ion-title>Programme {{ nomPage }}:</ion-title>
+  </ion-item>
+  <ion-slides [options]="sliderConfig" pager=true>
+    <ion-slide *ngFor="let cen of programmeEnCours | async">
+      <ion-card>
+        <ion-card-title>{{cen.titre}}</ion-card-title>
+        <img src="{{cen.img}}" />
+        <ion-label>
+          {{cen.dateDeDebut?.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' })}}
+          <br>
+          {{cen.dateDeFin?.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' })}}
+        </ion-label>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <ion-item lines="none">
+    <ion-title *ngIf="tarifs.length!=0">Tarifs :</ion-title>
+  </ion-item>
+  <ion-text *ngFor="let tarif of tarifs"> {{ tarif?.tarif }}<br></ion-text>
+  <ion-item lines="none">
+    <ion-title *ngIf="contacts.length!=0">Contact :</ion-title>
+  </ion-item>
+  <ion-text *ngFor="let contact of contacts"> {{ contact?.contact }}<br></ion-text>
+</div>

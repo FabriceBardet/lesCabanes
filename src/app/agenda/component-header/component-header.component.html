@@ -1,0 +1,24 @@
+<ion-toolbar class="header">
+    <ion-img id="logoLCU" slot="start" src="../../assets/logo/Logo_CabanesUrbaines_Bichro_RVB.svg"></ion-img>
+
+    <div id="zoneHeader">
+        <div id="zoneRetour" routerLink="/navigation">
+            <ion-img id="iconeRetour" src="../../assets/icones/picto-back.png"></ion-img>
+            <ion-text id="texteRetour" color="primary">Découverte</ion-text>
+        </div>
+        <div id="zoneTitre">
+            <ion-text class="titrePage" color="primary">{{this.nomPage}}</ion-text>
+        </div>
+
+        <ion-button id="buttonFiltre" (click)="voirFiltres()">Filtres</ion-button>
+    </div>
+
+    <ion-buttons slot="end" class="drapeau" style="opacity: 0">
+        <ion-button>
+            <ion-img src="../../assets/icones/drapeau_france.png"></ion-img>
+        </ion-button>
+        <ion-button>
+            <ion-img src="../../assets/icones/drapeau_royaume-uni.jpg"></ion-img>
+        </ion-button>
+    </ion-buttons>
+</ion-toolbar>

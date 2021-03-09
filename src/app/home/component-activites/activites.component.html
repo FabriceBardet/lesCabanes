@@ -1,0 +1,25 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>En ce moment</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-slides [options]="sliderConfig" pager=true>
+      <ion-slide *ngFor=" let activite of activitesAAfficher">
+        <ion-text expand="full">
+          <div class="hauteurTitre">
+            <ion-label class="titre">{{activite.titre}}</ion-label>
+          </div>
+          <ion-img src="{{activite.img}}"></ion-img>
+
+          <p id="descriptif">{{activite.desc.substr(0,60)}} ...<br><br></p>
+          <p id="date"><strong>{{activite.date.toDate() | date: 'dd/MM/yyyy'}}</strong></p>
+          <ion-button expand="full" (click)="navDetails(activite.id)">
+            En savoir plus
+            <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+          </ion-button>
+          <br>
+        </ion-text>
+      </ion-slide>
+    </ion-slides>
+  </ion-card-content>
+</ion-card>

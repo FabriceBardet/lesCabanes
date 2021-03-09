@@ -1,0 +1,19 @@
+#zoneRetour{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 150px;
+  --background: transparent;
+  --box-shadow: none;
+  color: #E05B32;
+}
+
+#iconeRetour{
+  width:50%;
+  margin-right: 10%;
+
+}
+
+#texteRetour{
+  font-size: 1.5em;
+}

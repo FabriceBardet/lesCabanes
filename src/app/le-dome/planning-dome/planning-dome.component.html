@@ -1,0 +1,41 @@
+<ion-grid>
+  <ion-row>
+    <ion-col size="3">
+      <div id="zoneRetour" (click)="dismiss()">
+        <ion-img id="iconeRetour" src="../../assets/icones/picto-back.png"></ion-img>
+        <ion-text id="texteRetour" color="primary">Le Dôme</ion-text>
+      </div>
+    </ion-col>
+    <ion-col size="9">
+      <ion-text id="titre" color="primary">Planning des cours de Yoga</ion-text>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<div id="semaine">
+  <ion-item lines="none" *ngFor="let jour of semaine">
+    <ion-label>{{ jour | uppercase }}</ion-label>
+    <ion-list id="jour" *ngFor="let cours of coursYoga.get(jour) | async">
+      <ion-card class="coursPlanning">
+        <ion-card-subtitle style="color: #F15175" *ngIf="cours.type == 'Lyengar'">{{ cours.creneau }}</ion-card-subtitle>
+        <ion-card-subtitle style="color: #4CBBB5" *ngIf="cours.type == 'Ashtanga et Vinyasa'"> {{ cours.creneau }}</ion-card-subtitle>
+        <ion-card-subtitle style="color: #FFA422" *ngIf="cours.type == 'Yin et Restorative'"> {{ cours.creneau }}</ion-card-subtitle>
+        <ion-card-subtitle style="color: #C1CA53" *ngIf="cours.type == 'Pranayama'"> {{ cours.creneau }}</ion-card-subtitle>
+        <ion-card-subtitle style="color: #ECC5C7" *ngIf="cours.type == 'Yoga doux'"> {{ cours.creneau }}</ion-card-subtitle>
+        <ion-card-subtitle style="color: #4D5F61" *ngIf="cours.type == 'Hatha yoga'"> {{ cours.creneau }}</ion-card-subtitle>
+        <ion-card-subtitle style="color: #BBE7D1" *ngIf="cours.type == 'Taï-chi'"> {{ cours.creneau }}</ion-card-subtitle>
+
+
+        <ion-card-title style="color: #F15175" *ngIf="cours.type == 'Lyengar'">{{ cours.type }}</ion-card-title>
+        <ion-card-title style="color: #4CBBB5" *ngIf="cours.type == 'Ashtanga et Vinyasa'">{{ cours.type }}</ion-card-title>
+        <ion-card-title style="color: #FFA422" *ngIf="cours.type == 'Yin et Restorative'">{{ cours.type }}</ion-card-title>
+        <ion-card-title style="color: #C1CA53" *ngIf="cours.type == 'Pranayama'">{{ cours.type }}</ion-card-title>
+        <ion-card-title style="color: #ECC5C7" *ngIf="cours.type == 'Yoga doux'">{{ cours.type }}</ion-card-title>
+        <ion-card-title style="color: #4D5F61" *ngIf="cours.type == 'Hatha yoga'">{{ cours.type }}</ion-card-title>
+        <ion-card-title style="color: #BBE7D1" *ngIf="cours.type == 'Taï-chi'">{{ cours.type }}</ion-card-title>
+
+
+      </ion-card>
+    </ion-list>
+  </ion-item>
+</div>

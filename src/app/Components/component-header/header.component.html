@@ -1,0 +1,25 @@
+<ion-toolbar class="header">
+  <ion-img id="logoLCU" slot="start" src="../../assets/logo/Logo_CabanesUrbaines_Bichro_RVB.svg"></ion-img>
+
+  <div id="zoneHeader" *ngIf="this.texteIconeRetour">
+    <div id="zoneRetour" routerLink="/{{this.routeRetour}}">
+      <ion-img id="iconeRetour" src="../../assets/icones/picto-back.png"></ion-img>
+      <ion-text id="texteRetour" color="primary">{{ this.texteIconeRetour }}</ion-text>
+    </div>
+    <div id="zoneTitre">
+      <ion-img *ngIf="this.iconePage" id="iconePage" src="../../assets/icones/{{this.iconePage}}"></ion-img>
+      <ion-text class="titrePage" color="primary">{{this.nomPage}}</ion-text>
+    </div>
+  </div>
+
+  <ion-text *ngIf="!this.texteIconeRetour" class="titrePage" color="primary">{{ this.nomPage }}</ion-text>
+
+  <ion-buttons slot="end" class="drapeau" style="opacity: 0">
+    <ion-button>
+      <ion-img src="../../assets/icones/drapeau_france.png"></ion-img>
+    </ion-button>
+    <ion-button>
+      <ion-img src="../../assets/icones/drapeau_royaume-uni.jpg"></ion-img>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>

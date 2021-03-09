@@ -1,0 +1,301 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+@font-face {
+  font-family: 'Neilvard-One';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/font/Neilvard-One.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  src: url('./assets/font/Poppins-Regular.ttf');
+}
+
+
+
+@font-face {
+  font-family: 'Neilvard-One';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/font/Neilvard-One-SemiBold.ttf');
+}
+*{
+  font-family: 'Poppins';
+}
+
+ion-title {
+  ion-background-color: #E05B32;
+}
+
+.paragraphe{
+  margin-top: 2%;
+  text-align: justify;
+  font-size: 1.5vmax;
+}
+ion-toolbar ion-img {
+  max-width: 20%;
+}
+
+ion-toolbar ion-title{
+  text-align:center;
+  color:#E05B32;
+  font-size: 3vmax;
+}
+
+.drapeau ion-button ion-img{
+  max-height: 30px;
+  max-width: 50px;
+}
+
+.modal-css .modal-wrapper {
+  width: 75vw;
+  height: available;
+  position: absolute;
+  display: block;
+}
+/* css général des ion-card */
+ion-card{
+  --ion-card-background: #F7D5BA;
+  box-shadow: none;
+  align-items: stretch;
+  height:100%;
+}
+
+ion-card ion-card-title{
+  text-align: center;
+  padding:0;
+  width:100%;
+  font-weight: bolder;
+  font-size: 2vmax;
+  color:#E05B32;
+}
+
+ion-card ion-card-header ion-card-title{
+  font-weight: bolder;
+  font-size: 3vmax;
+  height: 60px;
+  text-align: center;
+  color: white;
+  margin:0;
+  padding:0;
+  width:100%;
+  background-color:#E05B32;
+}
+
+ion-card-header{
+  padding: 0 0 16px 0;
+}
+ion-toolbar{
+  --ion-toolbar-background: none;
+  }
+
+ion-card ion-card-subtitle{
+  font-size: 2vmax;
+  line-height: 2vmax;
+  text-align: center;
+  color: #E05B32;
+  margin: 10px 0 10px 0;
+}
+ion-card ion-card-content{
+  text-align: center;
+}
+
+ion-card ion-card-content ion-text{
+  color:#0d0d0d;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1vmax;
+  text-align: center;
+  text-align:center;
+  margin: 10px 0 10px 0!important;
+}
+/*css du slider*/
+ion-slides ion-slide ion-card{
+  border:0!important;
+}
+
+ion-slides ion-slide ion-title{
+  color: #e05b32;
+  font-size:1.5vmax;
+}
+
+ion-slides ion-slide ion-text{
+  max-width: 440px;
+}
+
+ion-title{
+  font-family: 'Neilvard-One', sans-serif;
+  font-weight: bold;
+  font-size: 3vmax;
+}
+/* CSS component activité*/
+#border {
+  border: 2px solid #E05B32;
+  height: auto;
+  width: auto;
+  padding:5px;
+}
+
+#border ion-item{
+  color: #E05B32;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5vmax;
+  box-shadow: none;
+}
+
+#border ion-card{
+  width: 85%;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#border ion-card ion-card-title{
+  font-size:1.5vmax;
+  padding-top:5px;
+}
+
+#border ion-card ion-card-subtitle{
+  font-size:1vmax;
+}
+
+#border ion-card ion-label{
+  position: absolute;
+  z-index: 99;
+  right:0px;
+  bottom: 0px;
+  padding:5px;
+  background: #F7D5BA;
+  color: #E05B32;
+  font-weight: bold;
+  font-size: 1vmax;
+}
+/* css content detail page */
+
+#content ion-label{
+  text-align: left;
+  font-size:1.5vmax;
+  font-weight: bolder;
+  color: #e05b32;
+  text-align: justify;
+}
+
+#content ion-text{
+  color: black;
+  --text-align: justify !important;
+  font-size: 1vmax;
+}
+
+#content ion-button{
+  --background: #f7d5ba;
+  color: #E05B32;
+  margin-left: 400px;
+}
+
+/* css de la partie programme*/
+#programme ion-card{
+  width: 85%;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#programme ion-card-title {
+  font-size: 1.5vmax;
+  padding:5px;
+}
+
+#programme ion-card ion-label{
+  position: absolute;
+  z-index: 99;
+  right:0px;
+  bottom: 0px;
+  padding:5px;
+  background: #F7D5BA;
+  color: #E05B32;
+  font-weight: bold;
+  font-size: 1vmax;
+}
+
+#programme ion-title {
+  color:#E05B32;
+  font-family: 'Poppins';
+  font-size: 1.5vmax;
+  padding: 0;
+  text-align: left;
+}
+
+#programme ion-text {
+  color: #000000;
+  text-align: left;
+  font-size: 1vmax;
+  padding-left: 5%;
+}
+
+/* ion-card des séances de cours dans les plannings de l'escalade et du yoga */
+.coursPlanning{
+  width: 115px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-items: normal;
+  --ion-card-background: white;
+  min-height: 50px !important;
+  height:100%;
+  border: solid #c4c4c4 1px;
+}
+
+.coursPlanning ion-card-subtitle{
+  font-size: 1vmax;
+  line-height: 1vmax;
+  text-align: center;
+  margin: 0;
+}
+
+.coursPlanning ion-card-title{
+  font-size: 13pt;
+  text-align: center;
+}
+
+canvas{
+  max-width: 150px !important;
+  max-height: 150px !important;
+}

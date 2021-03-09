@@ -1,0 +1,38 @@
+<ion-card *ngFor="let t of title | async" >
+   <ion-card-header>
+      <ion-card-title>La Cantine propose</ion-card-title>
+   </ion-card-header>
+   <ion-card-content>
+      <ion-card-subtitle>
+         {{t.Entree}}
+      </ion-card-subtitle>
+      <ion-text>
+         {{t.EntreeTxt}}
+      </ion-text>
+      <ion-card-subtitle>
+         {{t.Plat}}
+      </ion-card-subtitle>
+      <ion-text>
+         {{t.PlatTxt}}
+      </ion-text>
+      <ion-card-subtitle>
+         {{t.Tarte}}
+      </ion-card-subtitle>
+      <ion-text>
+         {{t.TarteTxt}}
+      </ion-text>
+      <ion-card-subtitle>
+         {{t.Quiche}}
+      </ion-card-subtitle>
+      <ion-text>
+         {{t.QuicheTxt}}
+      </ion-text>
+      <ion-card-subtitle>
+         {{t.Dessert}}
+      </ion-card-subtitle>
+      <ion-text>
+         {{t.DessertTxt}}
+      </ion-text>
+   </ion-card-content>
+
+</ion-card>

@@ -1,0 +1,24 @@
+<div id="border">
+  <ion-item lines="none">
+    <ion-label>En ce moment :</ion-label>
+  </ion-item>
+  <ion-card  *ngFor="let cen of activiteEnCours | async">
+      <ion-card-title>{{cen.titre}}</ion-card-title>
+      <ion-card-subtitle>{{cen.descriptif}}</ion-card-subtitle>
+    <img src="{{cen.img}}"/>
+    <ion-label>
+      {{cen.dateDebut}}<br>{{cen.dateDeFin}}
+    </ion-label>
+  </ion-card>
+  <ion-item lines="none">
+    <ion-label>A venir :</ion-label>
+  </ion-item>
+  <ion-card *ngFor="let cav of activiteAVenir | async">
+      <ion-card-title>{{cav.titre}}</ion-card-title>
+      <ion-card-subtitle>{{cav.Descriptif}}</ion-card-subtitle>
+    <img src="{{cav.img}}"/>
+    <ion-label>
+      {{cav.heureDebut}}<br>{{cav.heureDeFin}}
+    </ion-label>
+  </ion-card>
+</div>

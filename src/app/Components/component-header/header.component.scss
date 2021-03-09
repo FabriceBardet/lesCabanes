@@ -1,0 +1,56 @@
+.header{
+    text-align: center;
+    --ion-background-color: none;
+    --ion-toolbar-background:none;
+}
+
+#logoLCU{
+    max-width: 20%;
+}
+
+#zoneHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#zoneRetour{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+
+#iconeRetour{
+    width: 20%;
+  min-width: 20%;
+    margin: 10px;
+}
+
+#texteRetour{
+    font-size: 1.8em;
+}
+
+#zoneTitre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+#iconePage{
+    width: 10%;
+    margin: 20px;
+    margin-right: 25px;
+}
+
+.titrePage{
+    font-family: 'Neilvard-One', sans-serif;
+    font-weight: bold;
+    font-size: 3.3em;
+}
+
+card-content-content {
+    padding:10px;
+    font-size: 3.3em;
+}

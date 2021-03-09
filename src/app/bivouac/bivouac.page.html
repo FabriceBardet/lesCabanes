@@ -1,0 +1,21 @@
+<ion-content>
+  <app-header [nomPage]="nomPage" [iconePage]="iconePage" [texteIconeRetour]="texteIconeRetour"
+    [routeRetour]="routeRetour"> </app-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <app-actualite></app-actualite>
+      </ion-col>
+      <ion-col size="6">
+        <app-details-bivouac></app-details-bivouac>
+      </ion-col>
+      <ion-col size="3">
+        <app-programme-page [nomPage]="nomActu" [docBD]="docBD"></app-programme-page>
+        <div class="imgFondQr">
+          <ion-img class="imgFondQrCode" src="../../assets/QrCode/Contact_Le_Bivouac.png"></ion-img>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

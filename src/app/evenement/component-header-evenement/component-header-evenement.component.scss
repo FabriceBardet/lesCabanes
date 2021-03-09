@@ -1,0 +1,62 @@
+.header{
+  display: flex;
+  --ion-background-color: none;
+  --ion-toolbar-background:none;
+  width: 100%;
+  height: 30%;
+  margin-bottom: 15px;
+}
+
+#zoneLogo {
+  display: flex;
+  align-items: flex-start;
+  width: 20%;
+  margin-top: 4px;
+  margin-left: 3px;
+}
+
+#zoneHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+}
+
+#zoneRetour{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 25%;
+  height: 90%;
+  margin-top: 8%;
+}
+
+#iconeRetour{
+  width: 20%;
+}
+
+#texteRetour{
+  font-size: 1.8em;
+}
+
+#zoneTitre{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 75%;
+}
+
+.titrePage{
+  font-family: 'Neilvard-One', sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+.drapeau{
+  display: flex;
+  align-items: flex-start;
+  margin-top: 5%;
+  width: 10% !important;
+}

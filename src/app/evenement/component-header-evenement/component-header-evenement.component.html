@@ -1,0 +1,24 @@
+<div class="header">
+  <div id="zoneLogo">
+    <ion-img id="logoLCU" slot="start" src="../../assets/logo/Logo_CabanesUrbaines_Bichro_RVB.svg"></ion-img>
+  </div>
+
+  <div id="zoneHeader">
+    <div id="zoneRetour" routerLink="{{firestore.pageRetourDeDetailEvenement}}">
+      <ion-img id="iconeRetour" src="../../assets/icones/picto-back.png"></ion-img>
+      <ion-text id="texteRetour" color="primary">{{nomRetour}}</ion-text>
+    </div>
+    <div id="zoneTitre">
+      <ion-text class="titrePage" color="primary">{{nomPage}}</ion-text>
+    </div>
+  </div>
+
+  <ion-buttons slot="end" class="drapeau" style="opacity: 0">
+    <ion-button>
+      <ion-img src="../../assets/icones/drapeau_france.png"></ion-img>
+    </ion-button>
+    <ion-button>
+      <ion-img src="../../assets/icones/drapeau_royaume-uni.jpg"></ion-img>
+    </ion-button>
+  </ion-buttons>
+</div>

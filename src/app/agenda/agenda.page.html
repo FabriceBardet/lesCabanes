@@ -1,0 +1,8 @@
+<ion-content>
+  <app-component-header [nomPage]="nomPage" (typeChanged)="trierPar($event)"></app-component-header>
+  <div class="row">
+    <div class="col-12 col-md-4 mt-3" *ngFor=" let evenement of listeDesEvenements">
+      <app-component-card-evenement [evenement]="evenement"></app-component-card-evenement>
+    </div>
+  </div>
+</ion-content>

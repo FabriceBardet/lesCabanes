@@ -1,0 +1,7 @@
+{
+  "name": "LesCabanesUrbaines",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,33 @@
+#zoneRetour{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 25%;
+}
+
+#iconeRetour{
+  width:15%;
+  margin: 10px;
+}
+
+#texteRetour{
+  font-size: 1.5em;
+}
+
+#images{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#parcours{
+  width: 30%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+
+#detail{
+  width: 50%;
+  margin-bottom: 5%;
+  margin-right: 5%;
+}

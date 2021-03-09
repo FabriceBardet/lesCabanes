@@ -1,0 +1,11 @@
+<div id="content" *ngFor="let donnee of donnees">
+  <div>
+    <ion-label>{{ donnee?.titre }}</ion-label>
+    <br>
+    <ion-text > {{ donnee?.texte }}</ion-text>
+    <br>
+  </div>
+</div>
+
+<ion-button id="planning" (click)="presenterModal()"> Voir le planning</ion-button>
+
