@@ -36,6 +36,10 @@ Suite au clone du projet il sera nécessaire de faire un npm install:
 
 ```npm install```
 
+Si des vulnérabilités sont repérées, vous pouvez exécuter la commande :
+
+```npm audit fix```
+
 ### Lancer l'application
 
 Voic la ligne de commande pour lancer l'application

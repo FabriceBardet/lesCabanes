@@ -7,10 +7,15 @@
       <ion-card>
         <ion-card-title>{{cen.titre}}</ion-card-title>
         <img src="{{cen.img}}" />
-        <ion-label>
+        <ion-label *ngIf="cen.dateDeDebut.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' }) != cen.dateDeFin.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' }) ">
           {{cen.dateDeDebut?.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' })}}
           <br>
           {{cen.dateDeFin?.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' })}}
+        </ion-label>
+        <ion-label *ngIf="cen.dateDeDebut.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' }) == cen.dateDeFin.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' }) ">
+          {{cen.dateDeDebut?.toDate().toLocaleDateString('fr-FR', { month: 'numeric', day: 'numeric' })}}
+          <br>
+          {{cen.dateDeDebut?.toDate().toLocaleTimeString('fr-FR', {hour:'2-digit', minute:'2-digit'})}}
         </ion-label>
       </ion-card>
     </ion-slide>
