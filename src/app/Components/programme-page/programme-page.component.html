@@ -16,11 +16,11 @@
     </ion-slide>
   </ion-slides>
   <ion-item lines="none">
-    <ion-title *ngIf="tarifs.length!=0">Tarifs :</ion-title>
+    <ion-title class="tarif" *ngIf="tarifs.length!=0">Tarifs :</ion-title>
   </ion-item>
   <ion-text *ngFor="let tarif of tarifs"> {{ tarif?.tarif }}<br></ion-text>
   <ion-item lines="none">
-    <ion-title *ngIf="contacts.length!=0">Contact :</ion-title>
+    <ion-title class="tarif" *ngIf="contacts.length!=0">Contact :</ion-title>
   </ion-item>
   <ion-text *ngFor="let contact of contacts"> {{ contact?.contact }}<br></ion-text>
 </div>
