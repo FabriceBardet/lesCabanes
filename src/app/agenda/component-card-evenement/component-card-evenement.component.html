@@ -2,6 +2,7 @@
   <div class="card-header"><h2>{{evenement.titre}}</h2></div>
   <img class="card-img" src="{{evenement.img}}" alt="evenement.titre">
   <div class="card-body">
-    <h4><b>{{evenement.date.toDate().toLocaleDateString('fr-FR', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' })}}</b></h4>
+    <h4><b>{{evenement.date.toDate().toLocaleDateString('fr-FR', { weekday: 'long', month: 'long', day: 'numeric'})}}
+    <br>{{evenement.date.toDate().toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'})}}</b></h4>
   </div>
 </div>
