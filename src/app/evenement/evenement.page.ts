@@ -46,8 +46,8 @@ export class EvenementPage implements OnInit {
           const dateEvenement = this.date.split('/');
 
           // On vérifie si l'évènement à une heure de début et de fin
-          // Si oui, on les convertit pour les utilisées
-          // Si non, on aura uniquement l'heur de départ et il faudra créer une date de fin 1 heure après
+          // Si oui, on les convertit pour les utiliser
+          // Si non, on aura uniquement l'heure de départ et il faudra créer une date de fin 1 heure après
           if (this.heure.length > 5 && (this.heure[4] === 'à' || this.heure[6] === 'à')){
             this.debutEvenement = this.heure.split(' ')[0].replace('h', '');
             this.finEvenement = this.heure.split(' ')[2].replace('h', '');
@@ -66,7 +66,7 @@ export class EvenementPage implements OnInit {
 
           // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
           // Si on a 2 caractères, alors on connait uniquement l'heure
-          // Sinon, on a l'heure et les minutes de connu
+          // Sinon, on a l'heure et les minutes de connues
           if (this.debutEvenement.length === 2){
             this.debutEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + this.debutEvenement + '00' + '00Z';
           } else {
@@ -75,7 +75,7 @@ export class EvenementPage implements OnInit {
 
           // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
           // Si on a 2 caractères, alors on connait uniquement l'heure
-          // Sinon, on a l'heure et les minutes de connu
+          // Sinon, on a l'heure et les minutes de connues
           if (this.finEvenement.length === 2){
             this.finEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + this.finEvenement + '00' + '00Z';
           } else {
