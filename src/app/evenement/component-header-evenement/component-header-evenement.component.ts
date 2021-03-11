@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FirebaseService } from '../../services/firebase.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-component-header-evenement',
@@ -10,16 +11,25 @@ import { FirebaseService } from '../../services/firebase.service';
 export class ComponentHeaderEvenementComponent implements OnInit {
   @Input() nomPage: string;
   nomRetour: string;
+  @Input() routeRetour: string;
 
-  constructor(public firestore: FirebaseService) {
+  constructor(public router: Router) {
+  }
+
+  ngOnInit() {
     // on modifie le texte du bouton retour en fonction de la page depuis laquelle on vient
-    if (this.firestore.pageRetourDeDetailEvenement === '/home') {
+    if (this.routeRetour === 'home') {
       this.nomRetour = 'Accueil';
     }
-    else if (this.firestore.pageRetourDeDetailEvenement === '/agenda') {
+    else if (this.routeRetour === 'agenda') {
       this.nomRetour = 'Agenda';
     }
   }
 
-  ngOnInit() { }
+  /**
+   * Redirige vers la page d'où l'on vient
+   */
+  public navRetour(): void {
+    this.router.navigate([this.routeRetour]);
+  }
 }

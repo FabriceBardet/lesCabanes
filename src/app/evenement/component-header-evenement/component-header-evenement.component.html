@@ -4,7 +4,7 @@
   </div>
 
   <div id="zoneHeader">
-    <div id="zoneRetour" routerLink="{{firestore.pageRetourDeDetailEvenement}}">
+    <div id="zoneRetour" (click)="navRetour()">
       <ion-img id="iconeRetour" src="../../assets/icones/picto-back.png"></ion-img>
       <ion-text id="texteRetour" color="primary">{{nomRetour}}</ion-text>
     </div>
