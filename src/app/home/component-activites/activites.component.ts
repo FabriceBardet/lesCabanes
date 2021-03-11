@@ -44,6 +44,7 @@ export class ActivitesComponent implements OnInit {
    * @param id string, l'id du document permettant de l'identifier dans la BD
    */
   navDetails(id: string) {
-    this.router.navigate(['evenement/' + id]);
+    this.router.navigate(['evenement/' + id], {queryParams: {retour: 'home'}});
+
   }
 }
