@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <app-component-header-evenement [nomPage]=\"titre\"></app-component-header-evenement>\n  <ion-img class=\"imgFondHeader\" src=\"../../assets/elements-graphiques/shape-line-14.svg\"></ion-img>\n  <ion-img class=\"imgFondEvent\" src=\"../../assets/elements-graphiques/shape-line-6.svg\"></ion-img>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col size=\"6\">\n        <ion-img src=\"{{ img }}\"></ion-img>\n      </ion-col>\n      <ion-col size=\"6\">\n        <app-detail-evenement [id]=\"id\"></app-detail-evenement>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <qrcode [qrdata]=\"qrCodeTexte\" class=\"imgFondQrCode\" [size]=\"256\" [level]=\"'M'\"></qrcode>\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content>\n  <app-component-header-evenement [nomPage]=\"titre\" [routeRetour]=\"retour\"></app-component-header-evenement>\n  <ion-img class=\"imgFondHeader\" src=\"../../assets/elements-graphiques/shape-line-14.svg\"></ion-img>\n  <ion-img class=\"imgFondEvent\" src=\"../../assets/elements-graphiques/shape-line-6.svg\"></ion-img>\n\n  <ion-grid>\n    <ion-row>\n      <ion-col size=\"6\">\n        <ion-img src=\"{{ img }}\"></ion-img>\n      </ion-col>\n      <ion-col size=\"6\">\n        <app-detail-evenement [id]=\"id\"></app-detail-evenement>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <qrcode [qrdata]=\"qrCodeTexte\" class=\"imgFondQrCode\" [size]=\"256\" [level]=\"'M'\"></qrcode>\n</ion-content>\n");
 
 /***/ }),
 
@@ -132,29 +132,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _raw_loader_component_header_evenement_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./component-header-evenement.component.html */ "l4RB");
 /* harmony import */ var _component_header_evenement_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component-header-evenement.component.scss */ "jwjE");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _services_firebase_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/firebase.service */ "Z2Br");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
 
 
 
 
 
 var ComponentHeaderEvenementComponent = /** @class */ (function () {
-    function ComponentHeaderEvenementComponent(firestore) {
-        this.firestore = firestore;
+    function ComponentHeaderEvenementComponent(router) {
+        this.router = router;
+    }
+    ComponentHeaderEvenementComponent.prototype.ngOnInit = function () {
         // on modifie le texte du bouton retour en fonction de la page depuis laquelle on vient
-        if (this.firestore.pageRetourDeDetailEvenement === '/home') {
+        if (this.routeRetour === 'home') {
             this.nomRetour = 'Accueil';
         }
-        else if (this.firestore.pageRetourDeDetailEvenement === '/agenda') {
+        else if (this.routeRetour === 'agenda') {
             this.nomRetour = 'Agenda';
         }
-    }
-    ComponentHeaderEvenementComponent.prototype.ngOnInit = function () { };
+    };
+    /**
+     * Redirige vers la page d'où l'on vient
+     */
+    ComponentHeaderEvenementComponent.prototype.navRetour = function () {
+        this.router.navigate([this.routeRetour]);
+    };
     ComponentHeaderEvenementComponent.ctorParameters = function () { return [
-        { type: _services_firebase_service__WEBPACK_IMPORTED_MODULE_4__["FirebaseService"] }
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
     ]; };
     ComponentHeaderEvenementComponent.propDecorators = {
-        nomPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
+        nomPage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+        routeRetour: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
     };
     ComponentHeaderEvenementComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
@@ -179,7 +187,7 @@ var ComponentHeaderEvenementComponent = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header\">\n  <div id=\"zoneLogo\">\n    <ion-img id=\"logoLCU\" slot=\"start\" src=\"../../assets/logo/Logo_CabanesUrbaines_Bichro_RVB.svg\"></ion-img>\n  </div>\n\n  <div id=\"zoneHeader\">\n    <div id=\"zoneRetour\" routerLink=\"{{firestore.pageRetourDeDetailEvenement}}\">\n      <ion-img id=\"iconeRetour\" src=\"../../assets/icones/picto-back.png\"></ion-img>\n      <ion-text id=\"texteRetour\" color=\"primary\">{{nomRetour}}</ion-text>\n    </div>\n    <div id=\"zoneTitre\">\n      <ion-text class=\"titrePage\" color=\"primary\">{{nomPage}}</ion-text>\n    </div>\n  </div>\n\n  <ion-buttons slot=\"end\" class=\"drapeau\" style=\"opacity: 0\">\n    <ion-button>\n      <ion-img src=\"../../assets/icones/drapeau_france.png\"></ion-img>\n    </ion-button>\n    <ion-button>\n      <ion-img src=\"../../assets/icones/drapeau_royaume-uni.jpg\"></ion-img>\n    </ion-button>\n  </ion-buttons>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header\">\n  <div id=\"zoneLogo\">\n    <ion-img id=\"logoLCU\" slot=\"start\" src=\"../../assets/logo/Logo_CabanesUrbaines_Bichro_RVB.svg\"></ion-img>\n  </div>\n\n  <div id=\"zoneHeader\">\n    <div id=\"zoneRetour\" (click)=\"navRetour()\">\n      <ion-img id=\"iconeRetour\" src=\"../../assets/icones/picto-back.png\"></ion-img>\n      <ion-text id=\"texteRetour\" color=\"primary\">{{nomRetour}}</ion-text>\n    </div>\n    <div id=\"zoneTitre\">\n      <ion-text class=\"titrePage\" color=\"primary\">{{nomPage}}</ion-text>\n    </div>\n  </div>\n\n  <ion-buttons slot=\"end\" class=\"drapeau\" style=\"opacity: 0\">\n    <ion-button>\n      <ion-img src=\"../../assets/icones/drapeau_france.png\"></ion-img>\n    </ion-button>\n    <ion-button>\n      <ion-img src=\"../../assets/icones/drapeau_royaume-uni.jpg\"></ion-img>\n    </ion-button>\n  </ion-buttons>\n</div>\n");
 
 /***/ }),
 
@@ -307,59 +315,63 @@ var EvenementPage = /** @class */ (function () {
     }
     EvenementPage.prototype.ngOnInit = function () {
         var _this = this;
-        // Récupération des informations de l'événement dans la BD
-        this.route.paramMap.subscribe(function (params) {
-            // Récupération de l'id de l'évènement
-            _this.id = params.get('id');
-            _this.event = _this.firestore.getEventDocById(_this.id);
-            // Requête pour récupérer les informations de l'énvènements
-            _this.event.subscribe(function (data) {
-                _this.titre = data.titre;
-                _this.img = data.img;
-                _this.date = data.date.toDate().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' });
-                _this.heure = data.heure;
-                // On découpe la date pour avoir le jour, le mois et l'année en séparer
-                var dateEvenement = _this.date.split('/');
-                // On vérifie si l'évènement à une heure de début et de fin
-                // Si oui, on les convertit pour les utilisées
-                // Si non, on aura uniquement l'heur de départ et il faudra créer une date de fin 1 heure après
-                if (_this.heure.length > 5 && (_this.heure[4] === 'à' || _this.heure[6] === 'à')) {
-                    _this.debutEvenement = _this.heure.split(' ')[0].replace('h', '');
-                    _this.finEvenement = _this.heure.split(' ')[2].replace('h', '');
-                }
-                else {
-                    _this.debutEvenement = _this.heure.replace('h', '');
-                    // tslint:disable-next-line:radix
-                    var heureEvenement = parseInt(_this.debutEvenement);
-                    if (heureEvenement < 100) {
-                        heureEvenement += 1;
+        // Récupération du paramètre indiquant la page d'où l'on vient
+        this.route.queryParams.subscribe(function (props) {
+            _this.retour = props.retour;
+            // Récupération des informations de l'événement dans la BD
+            _this.route.paramMap.subscribe(function (params) {
+                // Récupération de l'id de l'évènement
+                _this.id = params.get('id');
+                _this.event = _this.firestore.getEventDocById(_this.id);
+                // Requête pour récupérer les informations de l'énvènements
+                _this.event.subscribe(function (data) {
+                    _this.titre = data.titre;
+                    _this.img = data.img;
+                    _this.date = data.date.toDate().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' });
+                    _this.heure = data.heure;
+                    // On découpe la date pour avoir le jour, le mois et l'année en séparer
+                    var dateEvenement = _this.date.split('/');
+                    // On vérifie si l'évènement à une heure de début et de fin
+                    // Si oui, on les convertit pour les utilisées
+                    // Si non, on aura uniquement l'heur de départ et il faudra créer une date de fin 1 heure après
+                    if (_this.heure.length > 5 && (_this.heure[4] === 'à' || _this.heure[6] === 'à')) {
+                        _this.debutEvenement = _this.heure.split(' ')[0].replace('h', '');
+                        _this.finEvenement = _this.heure.split(' ')[2].replace('h', '');
                     }
                     else {
-                        heureEvenement += 100;
+                        _this.debutEvenement = _this.heure.replace('h', '');
+                        // tslint:disable-next-line:radix
+                        var heureEvenement = parseInt(_this.debutEvenement);
+                        if (heureEvenement < 100) {
+                            heureEvenement += 1;
+                        }
+                        else {
+                            heureEvenement += 100;
+                        }
+                        _this.finEvenement = heureEvenement.toString();
                     }
-                    _this.finEvenement = heureEvenement.toString();
-                }
-                // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
-                // Si on a 2 caractères, alors on connait uniquement l'heure
-                // Sinon, on a l'heure et les minutes de connu
-                if (_this.debutEvenement.length === 2) {
-                    _this.debutEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.debutEvenement + '00' + '00Z';
-                }
-                else {
-                    _this.debutEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.debutEvenement + '00Z';
-                }
-                // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
-                // Si on a 2 caractères, alors on connait uniquement l'heure
-                // Sinon, on a l'heure et les minutes de connu
-                if (_this.finEvenement.length === 2) {
-                    _this.finEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.finEvenement + '00' + '00Z';
-                }
-                else {
-                    _this.finEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.finEvenement + '00Z';
-                }
-                // On écrit l'ensemble des informations dans le lien
-                _this.qrCodeTexte = 'https://www.google.com/calendar/render?action=TEMPLATE&text=' +
-                    _this.titre.split(' ').join('%20') + '&dates=' + _this.debutEvenement + '/' + _this.finEvenement + '&ctz=Europe/London';
+                    // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
+                    // Si on a 2 caractères, alors on connait uniquement l'heure
+                    // Sinon, on a l'heure et les minutes de connu
+                    if (_this.debutEvenement.length === 2) {
+                        _this.debutEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.debutEvenement + '00' + '00Z';
+                    }
+                    else {
+                        _this.debutEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.debutEvenement + '00Z';
+                    }
+                    // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
+                    // Si on a 2 caractères, alors on connait uniquement l'heure
+                    // Sinon, on a l'heure et les minutes de connu
+                    if (_this.finEvenement.length === 2) {
+                        _this.finEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.finEvenement + '00' + '00Z';
+                    }
+                    else {
+                        _this.finEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.finEvenement + '00Z';
+                    }
+                    // On écrit l'ensemble des informations dans le lien
+                    _this.qrCodeTexte = 'https://www.google.com/calendar/render?action=TEMPLATE&text=' +
+                        _this.titre.split(' ').join('%20') + '&dates=' + _this.debutEvenement + '/' + _this.finEvenement + '&ctz=Europe/London';
+                });
             });
         });
     };
