@@ -89,6 +89,7 @@ ion-card{
   box-shadow: none;
   align-items: stretch;
   height:100%;
+  margin-bottom:10px;
 }
 
 ion-card ion-card-title{
@@ -113,7 +114,7 @@ ion-card ion-card-header ion-card-title{
 }
 
 ion-card-header{
-  padding: 0 0 16px 0;
+  padding: 0 0 0px 0;
 }
 ion-toolbar{
   --ion-toolbar-background: none;
@@ -124,7 +125,7 @@ ion-card ion-card-subtitle{
   line-height: 2vmax;
   text-align: center;
   color: #E05B32;
-  margin: 10px 0 10px 0;
+  margin: 0px 0 Opx 0;
 }
 ion-card ion-card-content{
   text-align: center;

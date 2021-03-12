@@ -332,8 +332,8 @@ var EvenementPage = /** @class */ (function () {
                     // On découpe la date pour avoir le jour, le mois et l'année en séparer
                     var dateEvenement = _this.date.split('/');
                     // On vérifie si l'évènement à une heure de début et de fin
-                    // Si oui, on les convertit pour les utilisées
-                    // Si non, on aura uniquement l'heur de départ et il faudra créer une date de fin 1 heure après
+                    // Si oui, on les convertit pour les utiliser
+                    // Si non, on aura uniquement l'heure de départ et il faudra créer une date de fin 1 heure après
                     if (_this.heure.length > 5 && (_this.heure[4] === 'à' || _this.heure[6] === 'à')) {
                         _this.debutEvenement = _this.heure.split(' ')[0].replace('h', '');
                         _this.finEvenement = _this.heure.split(' ')[2].replace('h', '');
@@ -352,7 +352,7 @@ var EvenementPage = /** @class */ (function () {
                     }
                     // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
                     // Si on a 2 caractères, alors on connait uniquement l'heure
-                    // Sinon, on a l'heure et les minutes de connu
+                    // Sinon, on a l'heure et les minutes de connues
                     if (_this.debutEvenement.length === 2) {
                         _this.debutEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.debutEvenement + '00' + '00Z';
                     }
@@ -361,7 +361,7 @@ var EvenementPage = /** @class */ (function () {
                     }
                     // On vérifie la taille de l'heure pour savoir si il y aussi les minutes
                     // Si on a 2 caractères, alors on connait uniquement l'heure
-                    // Sinon, on a l'heure et les minutes de connu
+                    // Sinon, on a l'heure et les minutes de connues
                     if (_this.finEvenement.length === 2) {
                         _this.finEvenement = dateEvenement[2] + dateEvenement[1] + dateEvenement[0] + 'T' + _this.finEvenement + '00' + '00Z';
                     }
