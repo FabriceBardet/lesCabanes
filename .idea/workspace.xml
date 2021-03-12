@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39f2521c-e778-4ff7-96e5-85b2811c5d9b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/flecheQrCode.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/app/evenement/component-header-evenement/component-header-evenement.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evenement/component-header-evenement/component-header-evenement.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evenement/evenement.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evenement/evenement.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/evenement/evenement.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evenement/evenement.page.scss" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/src/app/evenement/evenement.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evenement/evenement.page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/evenement/evenement.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/evenement/evenement.page.ts" afterDir="false" />
+>>>>>>> 3d3640bf0f3ba7a677b3512295565e37f9a0960e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +31,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="excluded.www.directory" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Tests (app)" type="JavaScriptTestRunnerKarma">
@@ -68,11 +81,27 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1615451527292</updated>
+<<<<<<< HEAD
+      <workItem from="1615451528534" duration="1038000" />
+      <workItem from="1615453390649" duration="2569000" />
+=======
       <workItem from="1615451528534" duration="1390000" />
+>>>>>>> 3d3640bf0f3ba7a677b3512295565e37f9a0960e
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

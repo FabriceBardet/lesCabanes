@@ -7,10 +7,20 @@ ion-img {
 
 .imgFondQrCode {
   position: absolute;
-  right: -50px !important;
-  bottom: -50px !important;
+  right: -30px !important;
+  bottom: 30px !important;
   width: 200px;
   height: 195px;
+  padding: 0;
+  margin: 0;
+}
+
+#flecheQrCode{
+  position: absolute;
+  right: -20px !important;
+  bottom: 5px !important;
+  width: 270px;
+  height: 230px;
   padding: 0;
   margin: 0;
 }
