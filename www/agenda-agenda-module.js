@@ -209,7 +209,7 @@ var ComponentCardEvenementComponent = /** @class */ (function () {
      * @param id string, l'id du document permettant de l'identifier dans la BD
      */
     ComponentCardEvenementComponent.prototype.navDetails = function (id) {
-        this.router.navigate(['evenement/' + id]);
+        this.router.navigate(['evenement/' + id], { queryParams: { retour: 'agenda' } });
     };
     ComponentCardEvenementComponent.ctorParameters = function () { return [
         { type: _services_firebase_service__WEBPACK_IMPORTED_MODULE_4__["FirebaseService"] },
@@ -291,7 +291,7 @@ var AgendaPageModule = /** @class */ (function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\" (click)=\"navDetails(evenement.id)\">\n  <div class=\"card-header\"><h2>{{evenement.titre}}</h2></div>\n  <img class=\"card-img\" src=\"{{evenement.img}}\" alt=\"evenement.titre\">\n  <div class=\"card-body\">\n    <h4><b>{{evenement.date.toDate().toLocaleDateString('fr-FR', { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' })}}</b></h4>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"card\" (click)=\"navDetails(evenement.id)\">\n  <div class=\"card-header\"><h2>{{evenement.titre}}</h2></div>\n  <img class=\"card-img\" src=\"{{evenement.img}}\" alt=\"evenement.titre\">\n  <div class=\"card-body\">\n    <h4><b>{{evenement.date.toDate().toLocaleDateString('fr-FR', { weekday: 'long', month: 'long', day: 'numeric'})}}\n    <br>{{evenement.date.toDate().toLocaleTimeString('fr-FR', {hour: '2-digit', minute: '2-digit'})}}</b></h4>\n  </div>\n</div>\n");
 
 /***/ }),
 
